@@ -1,0 +1,30 @@
+[project]
+name = "hospital-multi-agent"
+version = "0.1.0"
+description = "Hospital Multi-Agent AI System — four independent specialist agents on MongoDB"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-adk>=2.13.0",
+    "litellm>=1.84.0",
+    "fastapi>=0.162.0",
+    "uvicorn[standard]>=0.54.0",
+    "pymongo>=4.10.0",
+    "dnspython>=2.6.0",
+    "pydantic-settings>=2.16.2",
+    "python-dotenv>=1.2.4",
+    "mcp>=2.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.4.1",
+    "httpx>=0.28.1",
+    "mongomock>=4.3.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
